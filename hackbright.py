@@ -14,7 +14,7 @@ db = SQLAlchemy()
 def connect_to_db(app):
     """Connect the database to our Flask app."""
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///hackbright2'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///hackbright'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.app = app
     db.init_app(app)

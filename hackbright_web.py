@@ -42,14 +42,16 @@ def show_student_add_form():
 def student_add():
     """Add a student."""
 
-    #new_student = request.form["student-add"]
-    #print(new_student)
-    new_student_firstname = request.form["newfirstname"]
-    new_student_lastname = request.form["newlastname"]
+    firstname = request.form["firstname"]
+    lastname = request.form["lastname"]
+    github = request.form["github"]
     
-    print(new_student_firstname)
-    # firstname, lastname, github = hackbright.make_new_student(firstname, lastname, github)
+    hackbright.make_new_student(firstname, lastname, github)
 
+    return render_template("student_add_confirmation.html",
+                            firstname=firstname,
+                            lastname=lastname,
+                            github=github)
     
 
 if __name__ == "__main__":
